@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           
       - name: Build Docker image
-        run: docker build Listify-Backend --file Dockerfile --tag jelmerr/s3-ips-jelmer
+        run: docker build ./Listify-Backend --file Dockerfile --tag jelmerr/s3-ips-jelmer
 
       - name: Docker push
         run: docker push jelmerr/s3-ips-jelmer
