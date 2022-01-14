@@ -6,14 +6,14 @@ ENV ASPNETCORE_URLS=http://+:44337
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["Listify-Backend.csproj", "./"]
+COPY ["./Listify-Brackend/Listify-Backend.csproj", "./"]
 RUN dotnet restore "Listify-Backend.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Listify-Backend.csproj" -c Release -o /app/build
+RUN dotnet build "./Listify-Brackend/Listify-Backend.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Listify-Backend.csproj" -c Release -o /app/publish
+RUN dotnet publish "./Listify-Brackend/Listify-Backend.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
