@@ -13,9 +13,7 @@ namespace Listify_Backend.DataModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server = database,1433; Database = dbi459818_listifydb; User Id = sa; Password = m3ZS5g9YjPjct5am;"); //docker
-            optionsBuilder.UseSqlServer("Server = mssql.fhict.local; Database = dbi459818_listifydb; User Id = dbi459818_listifydb; Password = ListifyDB;"); //non-docker
+            optionsBuilder.UseSqlServer("Server = database,1433; Database = dbi459818_listifydb; User Id = sa; Password = m3ZS5g9YjPjct5am;");
         }
-    }
     }
 }
